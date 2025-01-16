@@ -26,20 +26,35 @@ export default function UserItem({
   return (
     <div className="p-4 border border-[#e5e5e5] rounded-lg w-[350px]">
       <div className="mt-4">
-        <h1>{`${firstname} ${lastname}`}</h1>
+        <h1 className="font-bold">{`${firstname} ${lastname}`}</h1>
         <p>
-          Email: <a href={`mailto:${email}`}>{email}</a>
+          Email:{" "}
+          <a
+            className="focus:text-[#f6b83d] hover:text-[#f6b83d]
+transition-all"
+            href={`mailto:${email}`}
+          >
+            {email}
+          </a>
         </p>
         <p>
-          Phone: <a href={`tel:${phone}`}>{phone}</a>
+          Phone:{" "}
+          <a
+            className="focus:text-[#f6b83d] hover:text-[#f6b83d]
+transition-all"
+            href={`tel:${phone}`}
+          >
+            {phone}
+          </a>
         </p>
         <p>
           Website:
           <a
+            className="focus:text-[#f6b83d] hover:text-[#f6b83d]
+transition-all"
             href={`https://${website}`}
             target="_blank"
             rel="noopener noreferrer"
-            className=""
           >
             {website}
           </a>
