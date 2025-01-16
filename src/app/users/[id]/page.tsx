@@ -4,7 +4,7 @@ import { getUsersById } from "@/src/lib/api";
 export default async function UserDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const user = await getUsersById(id);

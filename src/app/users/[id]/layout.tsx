@@ -1,11 +1,16 @@
-import { getUsersById } from "@/src/lib/api";
 import React from "react";
+import { Metadata } from "next";
+import { getUsersById } from "@/src/lib/api";
 
 export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const user = await getUsersById(id);
 
